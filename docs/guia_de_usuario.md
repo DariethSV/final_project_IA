@@ -31,6 +31,9 @@ Este proyecto requiere la configuración de dos claves API:
 3.  Añade un nuevo secreto con el nombre `KAGGLE_API_TOKEN` y pega tu API KEY de Kaggle en el campo valor
 4.  Añade otro secreto con el nombre `GROQ_API_KEY` y pega tu API KEY de Groq en el campo de valor.
 
+Resultado después de haber puesto las claves:
+<img width="1113" height="859" alt="image" src="https://github.com/user-attachments/assets/c24935b6-58b8-42c1-8b45-f1ec93230d53" />
+
 ## 2. Cómo Ejecutar el Proyecto
 
 1.  **Clonar el Repositorio**: Clona este repositorio en tu entorno local o directamente en Google Colab. Todo los procedimientos del proyecto (EDA, preprocesamiento, PCA, entrenamiento, validación y prueba del modelo...) se encuentra en un solo Notebook titulado `project_AI.ipynb`
