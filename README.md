@@ -10,7 +10,7 @@ El objetivo principal es construir y evaluar modelos de clasificación capaces d
 en un clúster de Kubernetes: Slowloris y Torshammer. Se aborda el preprocesamiento de datos, la reducción de dimensionalidad con PCA, el entrenamiento y evaluación 
 de modelos de alto rendimiento, y la explicabilidad del modelo mediante SHAP, con interpretaciones generadas por un modelo de lenguaje grande (LLM).
 
-[Conoce como ejecutar el proyecto](https://github.com/DariethSV/final_project_IA/blob/main/docs/guia_de_usuario.md)
+[Conoce cómo ejecutar el proyecto](https://github.com/DariethSV/final_project_IA/blob/main/docs/guia_de_usuario.md)
 
 [Video](https://www.canva.com/design/DAHKc_8rLtw/GxAyOcq0L0QBugWsyR71SA/watch?utm_content=DAHKc_8rLtw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0e5fe00e02)
 
