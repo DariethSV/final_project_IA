@@ -10,6 +10,8 @@ El objetivo principal es construir y evaluar modelos de clasificación capaces d
 en un clúster de Kubernetes: Slowloris y Torshammer. Se aborda el preprocesamiento de datos, la reducción de dimensionalidad con PCA, el entrenamiento y evaluación 
 de modelos de alto rendimiento, y la explicabilidad del modelo mediante SHAP, con interpretaciones generadas por un modelo de lenguaje grande (LLM).
 
+Para saber como ejecutar el proyecto dirijase a la sección docs/guia_de_usuario.md para conocer los pasos a seguir
+
 ## 2. Dataset
 
 El proyecto utiliza el dataset `Kubernetes Intrusion Detection Datasets`, obtenido de Kaggle. Este dataset contiene métricas de observabilidad de un clúster Kubernetes bajo diferentes escenarios: 
@@ -50,64 +52,14 @@ Se integró SHAP (SHapley Additive exPlanations) para interpretar las prediccion
 Se utiliza la API de Groq (modelo `llama-3.1-8b-instant`) para generar explicaciones en lenguaje natural basadas en los valores SHAP de los componentes principales más influyentes. Esto facilita 
 la comprensión de por qué el modelo hizo una predicción particular.
 
-## 4. Requisitos
-
-Para ejecutar este notebook, necesitarás tener instaladas las siguientes librerías de Python:
-
-*   `pandas`
-*   `scikit-learn`
-*   `xgboost`
-*   `matplotlib`
-*   `seaborn`
-*   `shap`
-*   `groq`
-*   `kaggle`
-
-Puedes instalarlas usando `pip` o ejecutando la primera celda que aparece en el Notebook:
-
-```bash
-%pip install pandas scikit-learn xgboost matplotlib seaborn shap groq kaggle
-```
-
-### 4.1. Claves API
-
-Este proyecto requiere la configuración de dos claves API:
-
-*   **Kaggle API Key**: Para descargar el dataset `kube-ids0` directamente desde Kaggle.
-*   **Groq API Key**: Para la integración del LLM y la generación de explicaciones en lenguaje natural.
-
-**Instrucciones para configurar las claves API en Google Colab:**
-
-1.  Abre Google Colab.
-2.  En el panel izquierdo, busca el icono de '🔑' (Secrets).
-3.  Añade un nuevo secreto con el nombre `KAGGLE_API_TOKEN` y pega tu API KEY de Kaggle en el campo valor
-4.  Añade otro secreto con el nombre `GROQ_API_KEY` y pega tu API KEY de Groq en el campo de valor.
-
-
-## 5. Cómo Ejecutar el Proyecto
-
-1.  **Clonar el Repositorio**: Clona este repositorio en tu entorno local o directamente en Google Colab. Todo los procedimientos del proyecto (EDA, preprocesamiento, PCA, entrenamiento, validación y prueba del modelo...) se encuentra en un solo Notebook titulado `project_AI.ipynb`
-
-2.  **Abrir en Google Colab**: Abre el archivo `project_AI.ipynb` en Google Colab.
-
-3.  **Instalar Dependencias**: Asegúrate de que todas las librerías mencionadas en la sección de requisitos estén instaladas. La primera celda del notebook suele incluir los comandos `pip install` necesarios.
-
-4.  **Configurar Claves API**: Configura tus claves de Kaggle y Groq en los 'Secrets' de Colab, como se explica en la sección 4.1.
-
-5.  **Ejecutar Todas las Celdas**: Ejecuta todas las celdas del notebook en orden. Esto realizará los siguientes pasos automáticamente:
-    *   Descargará el dataset desde Kaggle.
-    *   Realizará todo el preprocesamiento de datos (selección de características, escalado, PCA).
-    *   Entrenará y evaluará los modelos XGBoost y Regresión Logística.
-    *   Generará visualizaciones de explicabilidad SHAP.
-    *   Integrará el LLM para obtener explicaciones detalladas de las predicciones.
-Al ejecutar todas las celdas se le pedirá permiso para acceder a los secretos de Google Colab, deberá otorgar el acceso y vuelvo a ejecutar todas las celdas
-
-
-
-## 6. Resultados Clave
+## 4. Resultados Clave
 
 *   **Alto Rendimiento**: Ambos modelos, especialmente XGBoost (con un `accuracy` de ~0.999), demostraron una capacidad excepcional para detectar los ataques Slowloris y Torshammer.
 *   **Importancia de PCA**: La reducción de dimensionalidad con PCA fue efectiva, manteniendo un alto rendimiento del modelo con un conjunto de características reducido.
 *   **Explicabilidad**: SHAP proporcionó información valiosa sobre qué componentes principales influyen más en las predicciones, y el LLM tradujo esto en explicaciones técnicas comprensibles, facilitando el diagnóstico operacional.
 
 Este proyecto sirve como una base sólida para el desarrollo de sistemas de detección de intrusiones más avanzados en entornos de Kubernetes, ofreciendo no solo predicciones precisas sino también una comprensión clara de las razones detrás de ellas.
+
+## Integrantes:
+* Valentina Benitez Zapata | Correo: vbenitezz@eafit.edu.co
+* Darieth Farid Sánchez Velásquez | Correo: dfsanchezv@eafit.edu.co
